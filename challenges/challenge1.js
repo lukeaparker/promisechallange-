@@ -5,6 +5,8 @@
  * 
  * 1. Read over the code that follows. In what order will the outputs "Step 1",
  *    "Step 2", and "Step 3" be printed? How do you know?
+ *    Step 1, Step 3, Step 1
+ *    The way the snooze function moves over step 2 untill the end
  * 
  * 
  * 2. Run this code using `node challenge1.js`. In what order were the steps
@@ -22,7 +24,7 @@
 function snooze(action) {
     setTimeout(function() {
       action();
-    }, 2000);
+    }, 0);
 }
 console.log('Step 1');
 

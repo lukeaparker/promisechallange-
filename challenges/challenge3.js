@@ -67,15 +67,26 @@ async function greetAndUppercase(name) {
     return uppercasedGreeting
 }
 
+function uppercaser(str) {
+  return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+      if (typeof str === 'string') {
+          resolve(str.split(" "));
+      } else {
+          reject('Argument to spacer must be string');
+      }
+      }, 1500);
+  });
+}
+
 /* Uncomment me! #1 */
-// result = greetAndUppercase('Ducky')
-// console.log(result)
+result = greetAndUppercase('Ducky')
+console.log(result)
 
 /* Uncomment me! #2 */
-// greetAndUppercase('Ducky')
-//     .then(function(result) {
-//         console.log(result)
-//     })
-//     .catch(function(err) {
-//         console.log(err)
-//     })
+greetAndUppercase('Ducky').then(function(result) {
+         console.log(result)
+     })
+     .catch(function(err) {
+         console.log(err)
+     })

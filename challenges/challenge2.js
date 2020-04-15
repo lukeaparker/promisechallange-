@@ -63,6 +63,23 @@ function uppercaser(str) {
     });
 }
 
+
+function uppercaser(str) {
+  return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+      if (typeof str === 'string') {
+          resolve(str.split(" "));
+      } else {
+          reject('Argument to spacer must be string');
+      }
+      }, 1500);
+  });
+}
+
+
+
+
+
 name = 'Ducky'
 my_str = 'Make School is Awesome!!!'
 
@@ -73,7 +90,11 @@ greet(name)
     })
     .then((uppercaserResult) => {
         console.log(uppercaserResult)
-    }).catch((err) => {
+    })
+    .then((spacerResult) => {
+        console.log(spacerResult)
+    })
+    .catch((err) => {
         console.log('Received an error!')
         console.log(err);
-    });
+    })
